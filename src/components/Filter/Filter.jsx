@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 function Filter({ filter, onChange }) {
   return (
     <div>
-      <label htmlFor={filterId(filter)}>Find contacts by name</label>
+      <label htmlFor={filter}>Find contacts by name</label>
       <Input
         value={filter}
         onChange={onChange}
@@ -17,7 +17,7 @@ function Filter({ filter, onChange }) {
   );
 }
 Filter.propTypes = {
-  onChange: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
 };
 export default Filter;

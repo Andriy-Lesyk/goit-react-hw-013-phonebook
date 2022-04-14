@@ -32,7 +32,7 @@ export default class App extends Component {
     }));
   };
   changeFilter = e => {
-    this.setState({ filter: e.currentTarget.value.toLowerCase() });
+    this.setState({ filter: e.currentTarget.value });
   };
   componentDidMount() {
     const cont = localStorage.getItem('contacts');
@@ -55,13 +55,12 @@ export default class App extends Component {
         <Filter filter={filter} onChange={this.changeFilter} />
         <h2>Contacts</h2>
         <Contacts
-          id={this.keyId}
           onDelete={this.deleteContact}
           contacts={
             filter === ''
               ? contacts
               : contacts.filter(cont =>
-                  cont.name.toLowerCase().includes(filter)
+                  cont.name.toLowerCase().includes(filter.toLowerCase())
                 )
           }
         />
