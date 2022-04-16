@@ -1,6 +1,5 @@
 import React from 'react';
 import { Input } from './Filter.styles';
-import { v4 as filterId } from 'uuid';
 import PropTypes from 'prop-types';
 
 function Filter({ filter, onChange }) {
